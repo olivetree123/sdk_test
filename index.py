@@ -1,3 +1,4 @@
+import json
 import requests
 
 url1 = "http://127.0.0.1:8080/ListenSdkService/sdk/getDeviceList.php"
@@ -150,7 +151,7 @@ def publish_content():
                         "programName":
                         "12",  # 数据类型vachar[60],节目ID
                         "programType":
-                        2,  # 数据类型int,节目类型，1：轮播节目；2：定时节目，
+                        1,  # 数据类型int,节目类型，1：轮播节目；2：定时节目，
                         "time": [  # 节目的时段计划（轮播节目没有时段计划）
                             {
                                 "timeEnd": "23:59:59",  # 数据类型varchar[12],截止时间
@@ -171,7 +172,7 @@ def publish_content():
                       headers=headers,
                       data={
                           "devCode": "123456",
-                          "strProgramList": params
+                          "strProgramList": json.dumps(params)
                       })
     print(r.status_code)
     print(r.text)
