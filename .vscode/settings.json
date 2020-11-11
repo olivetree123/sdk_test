@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "D:\\install\\python3\\python.exe"
+    "python.pythonPath": "D:\\install\\python3\\python.exe",
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "yapf"
 }
