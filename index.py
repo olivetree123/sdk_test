@@ -34,7 +34,7 @@ def publish_content():
                     "pageEle": [  # 页面属性集合
                         {
                             "bgImg":
-                            "http:# image.zxlink.cn/img/20190516/b3a12c48808749c7a176315c62eeaadd.jpg",  # 数据类型 text,页面背景图片,格式为http超链接地址路径（注：务必保证所设地址是有效的http地址,否则，会引起节目播放异常）
+                            "http://image.zxlink.cn/img/20190516/b3a12c48808749c7a176315c62eeaadd.jpg",  # 数据类型 text,页面背景图片,格式为http超链接地址路径（注：务必保证所设地址是有效的http地址,否则，会引起节目播放异常）
                             "bgColor": "#000000",  # 数据类型varchar[8],页面背景颜色
                             "bgName": "页面1",  # 数据类型varchar[60],页面背景图片名称
                             "pageTime": 10,  # 数据类型int,页面停留时长
@@ -117,6 +117,51 @@ def publish_content():
                         }
                     ]
                 }
+            }
+        ],
+        "programPlan": [  # 节目清单计划属性
+            {
+                "defaultPid":
+                "",  # 数据类型int,默认节目的ID
+                "onlyCut":
+                1,  #  数据类型int,是否全部为定时节目，若全为定时节目值为1，否则值为0
+                "program": [  # 节目list
+                    {
+                        "createDate":
+                        1605089419000,  # 数据类型long,节目创建时间
+                        "date": [  # 节目日程（轮播节目没有日程限制）
+                            {
+                                "dateEnd": 1553961599000,  # 数据类型long, 截止日期
+                                "dateStart": 1553788800000  # 数据类型long, 起始日期
+                            }
+                        ],
+                        "isDefault":
+                        0,  # 数据类型int,是否为默认节目，若为默认节目值为1，否则值为0
+                        "planWeekDay": [  # 数据类型int,节目的周计划（轮播节目没有周计划）
+                            1,  # 数据类型int,周一,1启用、0关闭
+                            1,  # 数据类型int,周二,1启用、0关闭
+                            1,  # 数据类型int,周三,1启用、0关闭
+                            1,  # 数据类型int,周四,1启用、0关闭
+                            1,  # 数据类型int,周五,1启用、0关闭
+                            1,  # 数据类型int,周六,1启用、0关闭
+                            1  # 数据类型int,周日,1启用、0关闭
+                        ],
+                        "programId":
+                        "12",  # 数据类型varchar[32],节目ID
+                        "programName":
+                        "12",  # 数据类型vachar[60],节目ID
+                        "programType":
+                        2,  # 数据类型int,节目类型，1：轮播节目；2：定时节目，
+                        "time": [  # 节目的时段计划（轮播节目没有时段计划）
+                            {
+                                "timeEnd": "23:59:59",  # 数据类型varchar[12],截止时间
+                                "timeStart": "00:00:00"  # 数据类型varchar[12],起始时间
+                            }
+                        ],
+                        "updateDate":
+                        1605089419000  # 数据类型long,节目更新时间
+                    }
+                ]
             }
         ]
     }
