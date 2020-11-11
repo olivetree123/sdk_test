@@ -1,5 +1,4 @@
 import requests
-from requests.api import head
 
 url1 = "http://127.0.0.1:8080/ListenSdkService/sdk/getDeviceList.php"
 url2 = "http://127.0.0.1:8080/ListenSdkService/sdk/lsPublishProgram.fgl"
