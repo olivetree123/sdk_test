@@ -1,4 +1,5 @@
 import requests
+from requests.api import head
 
 url1 = "http://127.0.0.1:8080/ListenSdkService/sdk/getDeviceList.php"
 url2 = "http://127.0.0.1:8080/ListenSdkService/sdk/lsPublishProgram.fgl"
@@ -119,8 +120,12 @@ def publish_content():
             }
         ]
     }
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
+    }
     r = requests.post(url2,
-                      json={
+                      headers=headers,
+                      data={
                           "devCode": "123456",
                           "strProgramList": params
                       })
