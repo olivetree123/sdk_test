@@ -4,6 +4,7 @@ import requests
 from params.text import params as text_params
 from params.image import params as image_params
 from params.video import params as video_params
+from params.mixed import params as mixed_params
 
 url1 = "http://127.0.0.1:8080/ListenSdkService/sdk/getDeviceList.php"
 url2 = "http://127.0.0.1:8080/ListenSdkService/sdk/lsPublishProgram.fgl"
@@ -42,6 +43,10 @@ def publish_video():
     publish(video_params)
 
 
+def publish_mixed():
+    publish(mixed_params)
+
+
 def heart_beat():
     r = requests.post(url2)
     print(r.status_code)
@@ -50,6 +55,7 @@ def heart_beat():
 
 if __name__ == "__main__":
     get_device_list()
-    publish_content()
+    # publish_content()
     # publish_image()
     # publish_video()
+    publish_mixed()
