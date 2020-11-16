@@ -1,3 +1,4 @@
+import json
 import requests
 
 url1 = "http://127.0.0.1:8080/ListenSdkService/sdk/getDeviceList.php"
@@ -52,7 +53,7 @@ def publish_content():
                             "left":
                             0,  # 数据类型int,X坐标偏离值
                             "width":
-                            50,  # 数据类型int,区域宽度，不能超过节目分辨率的宽
+                            500,  # 数据类型int,区域宽度，不能超过节目分辨率的宽
                             "height":
                             50,  # 数据类型int,区域高度，不能超过节目分辨率的高
                             "zIndex":
@@ -105,12 +106,7 @@ def publish_content():
                                 {
                                     "id": 0,  # 字幕id 数据类型int,
                                     "name": "字幕1",  # 数据类型vachar[60],字幕名称
-                                    "text": "请输入文字"  # 数据类型 text,字幕内容
-                                },
-                                {
-                                    "id": 1,  # 数据类型int,字幕id
-                                    "name": "字幕2",  # 数据类型vachar[60],字幕名称
-                                    "text": "欢迎光临灵信视觉技术股份有限公司"  # 数据类型text,字幕内容
+                                    "text": "字幕演示demo，灵信视觉提供，感谢支持！！！"  # 数据类型 text,字幕内容
                                 }
                             ]
                         }
@@ -123,7 +119,7 @@ def publish_content():
                 "defaultPid":
                 "",  # 数据类型int,默认节目的ID
                 "onlyCut":
-                1,  #  数据类型int,是否全部为定时节目，若全为定时节目值为1，否则值为0
+                0,  #  数据类型int,是否全部为定时节目，若全为定时节目值为1，否则值为0
                 "program": [  # 节目list
                     {
                         "createDate":
@@ -150,7 +146,7 @@ def publish_content():
                         "programName":
                         "12",  # 数据类型vachar[60],节目ID
                         "programType":
-                        2,  # 数据类型int,节目类型，1：轮播节目；2：定时节目，
+                        1,  # 数据类型int,节目类型，1：轮播节目；2：定时节目，
                         "time": [  # 节目的时段计划（轮播节目没有时段计划）
                             {
                                 "timeEnd": "23:59:59",  # 数据类型varchar[12],截止时间
@@ -167,11 +163,12 @@ def publish_content():
     headers = {
         "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
     }
+    print(json.dumps(params))
     r = requests.post(url2,
                       headers=headers,
                       data={
                           "devCode": "123456",
-                          "strProgramList": params
+                          "strProgramList": json.dumps(params)
                       })
     print(r.status_code)
     print(r.text)
