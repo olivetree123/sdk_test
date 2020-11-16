@@ -53,7 +53,7 @@ def publish_content():
                             "left":
                             0,  # 数据类型int,X坐标偏离值
                             "width":
-                            50,  # 数据类型int,区域宽度，不能超过节目分辨率的宽
+                            500,  # 数据类型int,区域宽度，不能超过节目分辨率的宽
                             "height":
                             50,  # 数据类型int,区域高度，不能超过节目分辨率的高
                             "zIndex":
@@ -106,12 +106,7 @@ def publish_content():
                                 {
                                     "id": 0,  # 字幕id 数据类型int,
                                     "name": "字幕1",  # 数据类型vachar[60],字幕名称
-                                    "text": "请输入文字"  # 数据类型 text,字幕内容
-                                },
-                                {
-                                    "id": 1,  # 数据类型int,字幕id
-                                    "name": "字幕2",  # 数据类型vachar[60],字幕名称
-                                    "text": "欢迎光临灵信视觉技术股份有限公司"  # 数据类型text,字幕内容
+                                    "text": "字幕演示demo，灵信视觉提供，感谢支持！！！"  # 数据类型 text,字幕内容
                                 }
                             ]
                         }
@@ -124,7 +119,7 @@ def publish_content():
                 "defaultPid":
                 "",  # 数据类型int,默认节目的ID
                 "onlyCut":
-                1,  #  数据类型int,是否全部为定时节目，若全为定时节目值为1，否则值为0
+                0,  #  数据类型int,是否全部为定时节目，若全为定时节目值为1，否则值为0
                 "program": [  # 节目list
                     {
                         "createDate":
@@ -168,6 +163,7 @@ def publish_content():
     headers = {
         "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
     }
+    print(json.dumps(params))
     r = requests.post(url2,
                       headers=headers,
                       data={
