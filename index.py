@@ -24,7 +24,7 @@ def publish(params):
     r = requests.post(url2,
                       headers=headers,
                       data={
-                          "devCode": "123456",
+                          "devCode": "QC202011160001",
                           "strProgramList": json.dumps(params)
                       })
     print(r.status_code)
