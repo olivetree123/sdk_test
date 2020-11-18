@@ -3,9 +3,9 @@ from utils.functions import datetime_to_timestamp, today_timestamp
 
 params = {
     "programId":
-    "schedule-12",  # 数据类型varchar[32],节目ID，用于标识节目的唯一性（注，要与定时节目清单计划节点的节目ID一致），不同节目，对应的节目ID肯定不同，每个节目都有一个ID值
+    "120",  # 数据类型varchar[32],节目ID，用于标识节目的唯一性（注，要与定时节目清单计划节点的节目ID一致），不同节目，对应的节目ID肯定不同，每个节目都有一个ID值
     "programName":
-    "schedule-12",  # 数据类型varchar[60] 节目名称（注，要与定时节目清单计划节点的节目名称一致）	
+    "120",  # 数据类型varchar[60] 节目名称（注，要与定时节目清单计划节点的节目名称一致）	
     "pageResolution": [{
         "resolution":
         "1920X1080"  # 数据类型varchar[32],节目分辨率（宽=1920，高=1080），即屏幕的实际分辨率，譬如某LED屏幕分辨率为192*96，那这里就设置为192*96，即宽度为192，高度为96；
@@ -41,7 +41,7 @@ params = {
                         "left":
                         0,  # 数据类型int,X坐标偏离值
                         "width":
-                        500,  # 数据类型int,区域宽度，不能超过节目分辨率的宽
+                        1920,  # 数据类型int,区域宽度，不能超过节目分辨率的宽
                         "height":
                         50,  # 数据类型int,区域高度，不能超过节目分辨率的高
                         "zIndex":
@@ -94,7 +94,7 @@ params = {
                             {
                                 "id": 0,  # 字幕id 数据类型int,
                                 "name": "字幕1",  # 数据类型vachar[60],字幕名称
-                                "text": "定时任务测试"  # 数据类型 text,字幕内容
+                                "text": "定时任务测试 222222"  # 数据类型 text,字幕内容
                             }
                         ]
                     }
@@ -131,15 +131,15 @@ params = {
                         1  # 数据类型int,周日,1启用、0关闭
                     ],
                     "programId":
-                    "schedule-12",  # 数据类型varchar[32],节目ID
+                    "120",  # 数据类型varchar[32],节目ID
                     "programName":
-                    "schedule-12",  # 数据类型vachar[60],节目ID
+                    "120",  # 数据类型vachar[60],节目ID
                     "programType":
                     2,  # 数据类型int,节目类型，1：轮播节目；2：定时节目，
                     "time": [  # 节目的时段计划（轮播节目没有时段计划）
-                        {
-                            "timeEnd": "17:20:00",  # 数据类型varchar[12],截止时间
-                            "timeStart": "17:05:00"  # 数据类型varchar[12],起始时间
+                        {   
+                            "timeStart": "15:20:00",  # 数据类型varchar[12],起始时间
+                            "timeEnd": "15:30:00"  # 数据类型varchar[12],截止时间
                         }
                     ],
                     "updateDate":

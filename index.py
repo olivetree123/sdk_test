@@ -19,6 +19,7 @@ def get_device_list():
 
 
 def publish(params):
+    print(params)
     headers = {
         "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
     }
@@ -59,8 +60,9 @@ def heart_beat():
 
 
 if __name__ == "__main__":
-    get_device_list()
+    # get_device_list()
     # publish_content()
-    # publish_image()
+    publish_image()
     # publish_video()
-    publish_mixed()
+    # publish_mixed()
+    # publish_schedule_task()
