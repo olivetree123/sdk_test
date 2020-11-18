@@ -62,7 +62,7 @@ def heart_beat():
 if __name__ == "__main__":
     # get_device_list()
     # publish_content()
-    publish_image()
+    # publish_image()
     # publish_video()
-    # publish_mixed()
+    publish_mixed()
     # publish_schedule_task()
