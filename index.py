@@ -1,15 +1,18 @@
 import json
 import requests
 
-from params.text import params as text_params
+# text1 是轮播节目，text2是定时节目
+from params.text2 import params as text_params
 from params.image import params as image_params
 from params.video import params as video_params
 from params.mixed import params as mixed_params
+from params.html import params as html_params
+from params.html2 import params as html2_params
 from params.schedule import params as schedule_params
 
-url1 = "http://127.0.0.1:8080/ListenSdkService/sdk/getDeviceList.php"
-url2 = "http://127.0.0.1:8080/ListenSdkService/sdk/lsPublishProgram.fgl"
-url3 = "http://127.0.0.1:8080/ListenSdkService/sdk/deviceHeartBeatCallBack.php"
+url1 = "http://10.104.82.20:8080/ListenSdkService/sdk/getDeviceList.php"
+url2 = "http://10.104.82.20:8080/ListenSdkService/sdk/lsPublishProgram.fgl"
+url3 = "http://10.104.82.20:8080/ListenSdkService/sdk/deviceHeartBeatCallBack.php"
 
 
 def get_device_list():
@@ -26,7 +29,7 @@ def publish(params):
     r = requests.post(url2,
                       headers=headers,
                       data={
-                          "devCode": "QC202011160001",
+                          "devCode": "QC202101080005",
                           "strProgramList": json.dumps(params)
                       })
     print(r.status_code)
@@ -40,6 +43,8 @@ def publish_content():
 def publish_image():
     publish(image_params)
 
+def publish_html():
+    publish(html2_params)
 
 def publish_video():
     publish(video_params)
@@ -60,9 +65,10 @@ def heart_beat():
 
 
 if __name__ == "__main__":
-    # get_device_list()
+    get_device_list()
     # publish_content()
-    # publish_image()
+    publish_image()
     # publish_video()
-    publish_mixed()
+    # publish_mixed()
+    # publish_html()
     # publish_schedule_task()
